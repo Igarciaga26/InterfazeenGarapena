@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ik012982i18\\Documents\\Interfazeen Garapena\\4.Ariketa.IgorGarcia\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BB44722F-698B-4930-9BF2-AF13FB019EB6}|4.Ariketa.IgorGarcia\\4.Ariketa.IgorGarcia.csproj|c:\\users\\ik012982i18\\documents\\interfazeen garapena\\4.ariketa.igorgarcia\\4.ariketa.igorgarcia\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB44722F-698B-4930-9BF2-AF13FB019EB6}|4.Ariketa.IgorGarcia\\4.Ariketa.IgorGarcia.csproj|solutionrelative:4.ariketa.igorgarcia\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB44722F-698B-4930-9BF2-AF13FB019EB6}|4.Ariketa.IgorGarcia\\4.Ariketa.IgorGarcia.csproj|c:\\users\\ik012982i18\\documents\\interfazeen garapena\\4.ariketa.igorgarcia\\4.ariketa.igorgarcia\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BB44722F-698B-4930-9BF2-AF13FB019EB6}|4.Ariketa.IgorGarcia\\4.Ariketa.IgorGarcia.csproj|solutionrelative:4.ariketa.igorgarcia\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 217,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ik012982i18\\Documents\\Interfazeen Garapena\\4.Ariketa.IgorGarcia\\4.Ariketa.IgorGarcia\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "4.Ariketa.IgorGarcia\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\ik012982i18\\Documents\\Interfazeen Garapena\\4.Ariketa.IgorGarcia\\4.Ariketa.IgorGarcia\\MainWindow.xaml",
+              "RelativeToolTip": "4.Ariketa.IgorGarcia\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-09-14T08:05:23.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ik012982i18\\Documents\\Interfazeen Garapena\\4.Ariketa.IgorGarcia\\4.Ariketa.IgorGarcia\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "4.Ariketa.IgorGarcia\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ik012982i18\\Documents\\Interfazeen Garapena\\4.Ariketa.IgorGarcia\\4.Ariketa.IgorGarcia\\MainWindow.xaml.cs",
+              "RelativeToolTip": "4.Ariketa.IgorGarcia\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwCIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T08:05:23.311Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+﻿<Window x:Class="_5.Ariketa.IgorGarcia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_5.Ariketa.IgorGarcia"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="550">
+    <Grid>
+        <TextBlock x:Name="txtProbakoTestua"  Text="PROBAKO TESTUA" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" FontStyle="Normal" TextAlignment="Center"/>
+        
+        <Button x:Name="btnComic" Content="Comic Sans" HorizontalAlignment="Left" Margin="30,94,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Comic_Click"/>
+        <Button x:Name="btnLodia" Content="Lodia" HorizontalAlignment="Left" Margin="130,94,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Lodia_Click"/>
+        <Button x:Name="btnMarratua" Content="Marratua" HorizontalAlignment="Left" Margin="230,94,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Marratua_Click"/>
+        <Button x:Name="btnPlusTamaina" Content="+ Tamaina" HorizontalAlignment="Left" Margin="330,94,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="PlusTamaina_Click"/>
+        
+        <Button x:Name="btnCourier" Content="Courier" HorizontalAlignment="Left" Margin="30,144,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Courier_Click"/>
+        <Button x:Name="btnEtzana" Content="Etzana" HorizontalAlignment="Left" Margin="130,144,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Etzana_Click"/>
+        <Button x:Name="btnAzpimarratua" Content="Azpimarratua" HorizontalAlignment="Left" Margin="230,144,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Azpimarratua_Click"/>
+        <Button x:Name="btnMinusTamaina" Content="- Tamaina" HorizontalAlignment="Left" Margin="330,144,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="MinusTamaina_Click"/>
+        
+        <TextBox x:Name="txtTextua" HorizontalAlignment="Left" Margin="30,239,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="280" Height="140"/>
+        <Button x:Name="btnHautatu" Content="Hautatu" HorizontalAlignment="Left" Margin="370,317,0,0" VerticalAlignment="Top" Width="80" Height="30" FontSize="14" Click="Hautatu_Click"/>
+        <Button x:Name="btnIrten" Content="Irten" HorizontalAlignment="Left" Margin="370,378,0,0" VerticalAlignment="Top" Width="80" Height="30" FontSize="14" Click="Irten_Click"/>
+        
+        <TextBlock x:Name="TxtEmaitza" HorizontalAlignment="Center" Margin="0,470,0,0" VerticalAlignment="Top" TextWrapping="Wrap" Width="380" TextAlignment="Center"/>
+    </Grid>
+</Window>

@@ -1,0 +1,26 @@
+﻿<Window x:Name="_1_Ariketa" x:Class="_1.Ariketa.IgorGarcia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_1.Ariketa.IgorGarcia"
+        mc:Ignorable="d"
+        Title="Formula Matematikoaren kalkulua" Height="475" Width="450" Background="#FFF2F2F2">
+    <Grid>
+        <Button x:Name="LehenZenb" Content="Lehen zenbakia" HorizontalAlignment="Left" Margin="60,60,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="Kalkulatu_Click" Background="#FF89100F" Foreground="White" FontSize="11" FontStyle="Italic"/>
+        <Button x:Name="BigarrenZenb" Content="Bigarren zenbakia" HorizontalAlignment="Left" Margin="60,110,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="Kalkulatu_Click" Background="#FF89100F" Foreground="White" FontSize="11" FontStyle="Italic"/>
+        <Button x:Name="HirugarrenZenb" Content="Hirugarren zenbakia" HorizontalAlignment="Left" Margin="60,160,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="Kalkulatu_Click" Background="#FF89100F" Foreground="White" FontSize="11" FontStyle="Italic"/>
+        <Button x:Name="LaugarrenZenb" Content="Laugarren zenbakia" HorizontalAlignment="Left" Margin="60,210,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="Kalkulatu_Click" Background="#FF89100F" Foreground="White" FontSize="11" FontStyle="Italic"/>
+        <Button x:Name="Emaitza" Content="EMAITZA" HorizontalAlignment="Left" Margin="60,260,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="Kalkulatu_Click" Background="#FF283E8F" Foreground="White" FontStyle="Italic"/>
+        <TextBox x:Name="txtLehenengoZenbakia" HorizontalAlignment="Left" Margin="200,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="30"/>
+        <TextBox x:Name="txtBigarrenZenbakia" HorizontalAlignment="Left" Margin="200,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="30"/>
+        <TextBox x:Name="txtHirugarrenZenbakia" HorizontalAlignment="Left" Margin="200,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="30"/>
+        <TextBox x:Name="txtLaugarrenZenbakia" HorizontalAlignment="Left" Margin="200,210,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="30"/>
+        <TextBox x:Name="txtEmaitza" HorizontalAlignment="Left" Margin="200,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Height="30"/>
+        <Button x:Name="Kalkukatu" Content="Kalkulatu" HorizontalAlignment="Left" Margin="50,310,0,0" VerticalAlignment="Top" Width="80" Height="30" FontWeight="Bold" BorderBrush="#FFC3C3C3" Click="Kalkulatu_Click"/>
+        <Button x:Name="Garbitu" Content="Garbitu" HorizontalAlignment="Left" Margin="180,310,0,0" VerticalAlignment="Top" Width="80" Height="30" FontWeight="Bold" BorderBrush="#FFC3C3C3" Click="Garbitu_Click"/>
+        <Button x:Name="Irten" Content="Irten" HorizontalAlignment="Left" Margin="310,310,0,0" VerticalAlignment="Top" Width="80" Height="30" FontWeight="Bold" BorderBrush="#FFC3C3C3" Click="Irten_Click"/>
+
+
+    </Grid>
+</Window>
