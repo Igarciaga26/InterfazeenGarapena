@@ -1,0 +1,15 @@
+﻿<Window x:Class="_8.Ariketa.IgorGarcia.Hilabeteak"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_8.Ariketa.IgorGarcia"
+        mc:Ignorable="d"
+        Title="Hilabeteak" Height="150" Width="280" Background="LightGray">
+    <Grid>
+        <Label Content="Sartu datari gehitu behar zaion &#xD;&#xA;hilabete kopurua:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180"/>
+        <Button x:Name="Onartubtn" Content="Onartu" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="25" Width="70" Click="Onartu_Click"/>
+        <Button x:Name="Utzibtn" Content="Utzi" HorizontalAlignment="Right" Margin="0,45,10,0" VerticalAlignment="Top" Height="25" Width="70" Click="Utzi_Click"/>
+        <TextBox x:Name="txtHilabeteKop" HorizontalAlignment="Left" Margin="10,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184" Height="23"/>
+    </Grid>
+</Window>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="_8.Ariketa.IgorGarcia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_8.Ariketa.IgorGarcia"
+        mc:Ignorable="d"
+        Title="Data-funtzioak" Height="450" Width="800" Background="LightGray">
+    <Grid>
+        <Label Content="Orain" HorizontalAlignment="Left" Margin="60,50,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtOrain" HorizontalAlignment="Left" Margin="140,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" Height="26"/>
+
+        <Label Content="Gaur" HorizontalAlignment="Left" Margin="60,100,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtGaur" HorizontalAlignment="Left" Margin="140,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" Height="26"/>
+
+        <Label Content="Gaurko Ordua" HorizontalAlignment="Left" Margin="60,150,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtGaurkoOrdua" HorizontalAlignment="Left" Margin="140,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" Height="26"/>
+
+        <Label Content="Daten Batura" HorizontalAlignment="Left" Margin="60,200,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDatenBatura" HorizontalAlignment="Left" Margin="140,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" Height="26"/>
+
+        <Label Content="Daten Aldea" HorizontalAlignment="Left" Margin="60,250,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDatenAldea" HorizontalAlignment="Left" Margin="140,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" Height="26"/>
+        <Button Content="Exekutatu" HorizontalAlignment="Left" Margin="170,281,0,0" VerticalAlignment="Top" Height="20" Width="80" Background="White" Click="Exekutatu_Click"/>
+        <Button Content="Garbitu" HorizontalAlignment="Left" Margin="306,281,0,0" VerticalAlignment="Top" Height="20" Width="80" Background="White" Click="Garbitu_Click"/>
+        <Button Content="Irten" HorizontalAlignment="Left" Margin="438,281,0,0" VerticalAlignment="Top" Height="20" Width="80" Background="White" Click="Irten_Click"/>
+
+    </Grid>
+</Window>
