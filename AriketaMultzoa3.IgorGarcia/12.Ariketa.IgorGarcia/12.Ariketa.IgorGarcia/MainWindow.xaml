@@ -1,0 +1,35 @@
+﻿<Window x:Class="_12.Ariketa.IgorGarcia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_12.Ariketa.IgorGarcia"
+        mc:Ignorable="d"
+        Title="Dieten kalkulua" Height="450" Width="800"
+        PreviewKeyDown="Window_PreviewKeyDown">
+    <Grid>
+        <Label Content="Dietak" HorizontalAlignment="Left" Margin="60,24,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="chkGosaria" Content="Gosaria" HorizontalAlignment="Left" Margin="60,60,0,0" VerticalAlignment="Top" Checked="Kalkulatu" Unchecked="Kalkulatu"/>
+        <CheckBox x:Name="chkBazkaria" Content="Bazkaria" HorizontalAlignment="Left" Margin="60,90,0,0" VerticalAlignment="Top" Checked="Kalkulatu" Unchecked="Kalkulatu"/>
+        <CheckBox x:Name="chkAfaria" Content="Afaria" HorizontalAlignment="Left" Margin="60,120,0,0" VerticalAlignment="Top" Checked="Kalkulatu" Unchecked="Kalkulatu"/>
+
+        <Label Content="Bidaiak" HorizontalAlignment="Left" Margin="187,24,0,0" VerticalAlignment="Top"/>
+        <Label Content="KM" HorizontalAlignment="Left" Margin="187,55,0,0" VerticalAlignment="Top"/>
+        <Label Content="Orduak" HorizontalAlignment="Left" Margin="176,84,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtKM" HorizontalAlignment="Left" Margin="233,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="25" TextChanged="Kalkulatu"/>
+        <TextBox x:Name="txtOrduak" HorizontalAlignment="Left" Margin="233,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="25" TextChanged="Kalkulatu"/>
+
+        <Label Content="Lana" HorizontalAlignment="Left" Margin="400,24,0,0" VerticalAlignment="Top"/>
+        <Label Content="Orduak" HorizontalAlignment="Left" Margin="400,50,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtLanOrduak" HorizontalAlignment="Left" Margin="454,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="25" TextChanged="Kalkulatu"/>
+
+        <TextBox x:Name="txt1" HorizontalAlignment="Left" Margin="60,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="25" IsReadOnly="True" IsTabStop="False"/>
+        <TextBox x:Name="txt2" HorizontalAlignment="Left" Margin="233,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="25" IsReadOnly="True" IsTabStop="False"/>
+        <TextBox x:Name="txt3" HorizontalAlignment="Left" Margin="400,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="25" IsReadOnly="True" IsTabStop="False"/>
+
+        <Button Content="Garbitu" HorizontalAlignment="Left" Margin="66,254,0,0" VerticalAlignment="Top" Height="27" Width="81" Click="Garbitu_Click"/>
+        <Button Content="Irten" HorizontalAlignment="Left" Margin="193,254,0,0" VerticalAlignment="Top" Height="27" Width="81" Click="Irten_Click"/>
+        <TextBox x:Name="txtGuztira" HorizontalAlignment="Left" Margin="400,254,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="25" IsReadOnly="True" IsTabStop="False"/>
+        <Label Content="GUZTIRA" HorizontalAlignment="Left" Margin="321,252,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+    </Grid>
+</Window>

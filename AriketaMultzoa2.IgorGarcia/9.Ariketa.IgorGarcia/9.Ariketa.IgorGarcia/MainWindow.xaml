@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_9.Ariketa.IgorGarcia"
         mc:Ignorable="d"
-        Title="Lagun-Zerrenda" Height="450" Width="800">
+        Title="Lagun-Zerrenda" Height="450" Width="450">
     <Grid>
         <ListBox x:Name="LagunakList" HorizontalAlignment="Left" VerticalAlignment="Top"
                  Margin="20,45,0,0" Width="180" Height="180"
