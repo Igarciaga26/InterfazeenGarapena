@@ -1,0 +1,41 @@
+﻿<Window x:Class="_2._1.Ariketa.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2._1.Ariketa"
+        mc:Ignorable="d"
+        Title="Ataza Kudeatzailea" Height="450" Width="800">
+    <DockPanel Margin="8">
+        <ComboBox x:Name="CmbOrdenazioa" DockPanel.Dock="Top" SelectedIndex="0" Margin="0,0,0,8" SelectionChanged="CmbOrdenazioa_SelectionChanged">
+            <ComboBoxItem Content="Data ↑"/>
+            <ComboBoxItem Content="Data ↓"/>
+            <ComboBoxItem Content="Lehentasuna ↑"/>
+            <ComboBoxItem Content="Lehentasuna ↓"/>
+        </ComboBox>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal"
+                    HorizontalAlignment="Right" Margin="0,8,0,0">
+            <Button Content="Berria" Width="80" Margin="4" Click="BtnBerria_Click"/>
+            <Button Content="Editatu" Width="80" Margin="4" Click="BtnEditatu_Click"/>
+            <Button Content="Ezabatu" Width="80" Margin="4" Click="BtnEzabatu_Click"/>
+            <Button Content="Irten" Width="80" Margin="4" Click="BtnIrten_Click"/>
+        </StackPanel>
+        <DataGrid x:Name="DgAtazak" AutoGenerateColumns="False" IsReadOnly="True"
+                  CanUserAddRows="False" MouseDoubleClick="BtnEditatu_Click">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Titulua" Width="*" Binding="{Binding Titulua}"/>
+                <DataGridTextColumn Header="Lehentasuna" Binding="{Binding Lehentasuna}"/>
+                <DataGridTextColumn Header="Azken eguna"
+                                    Binding="{Binding AzkenEguna, StringFormat=yyyy-MM-dd}"/>
+                <DataGridTemplateColumn Header="Egina">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding Egina, UpdateSourceTrigger=PropertyChanged}"
+                                      HorizontalAlignment="Center" Click="ChkEgina_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>
