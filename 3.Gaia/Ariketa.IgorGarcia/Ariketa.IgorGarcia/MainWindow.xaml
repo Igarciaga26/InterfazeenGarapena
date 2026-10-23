@@ -1,0 +1,58 @@
+﻿<Window x:Class="Ariketa.IgorGarcia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:Ariketa.IgorGarcia"
+        Title="Leku-erreserba sistema"
+        Width="560" Height="700"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,12">
+            <TextBlock Text="Erreserba-data:" VerticalAlignment="Center" Margin="0,0,8,0" />
+            <DatePicker x:Name="DateBox"
+                        Width="150"
+                        SelectedDateChanged="DateBox_SelectedDateChanged" />
+        </StackPanel>
+
+        <TabControl x:Name="ZoneTabs" Grid.Row="1">
+            <TabItem Header="Autobusa">
+                <controls:SeatMapControl Rows="10" Columns="4"
+                                         SeatSelected="Map_SeatSelected"
+                                         SeatUnselected="Map_SeatUnselected"
+                                         OccupiedSeatClicked="Map_OccupiedSeatClicked" />
+            </TabItem>
+            <TabItem Header="Trena">
+                <controls:SeatMapControl Rows="8" Columns="4"
+                                         SeatSelected="Map_SeatSelected"
+                                         SeatUnselected="Map_SeatUnselected"
+                                         OccupiedSeatClicked="Map_OccupiedSeatClicked" />
+            </TabItem>
+            <TabItem Header="Hegazkina">
+                <controls:SeatMapControl Rows="10" Columns="6"
+                                         SeatSelected="Map_SeatSelected"
+                                         SeatUnselected="Map_SeatUnselected"
+                                         OccupiedSeatClicked="Map_OccupiedSeatClicked" />
+            </TabItem>
+        </TabControl>
+
+        <Button Grid.Row="2"
+                Content="Erreserbatu"
+                HorizontalAlignment="Right"
+                Padding="16,6"
+                Margin="0,12,0,0"
+                Click="ReserveButton_Click" />
+
+        <TextBlock x:Name="MessageText"
+                   Grid.Row="3"
+                   Margin="0,12,0,0"
+                   TextWrapping="Wrap"
+                   Foreground="Gray"
+                   Text="Klik leku libre batean hautatzeko. Klik leku okupatu batean erreserba bertan behera uzteko." />
+    </Grid>
+</Window>

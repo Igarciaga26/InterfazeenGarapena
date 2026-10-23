@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="_3._1.IgorGarcia.GelaxkaKontrola"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:_3._1.IgorGarcia"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+    <Grid x:Name="gelaxkaGrid" Background="Green">
+        <Label x:Name="gelaxkaLabel"
+               Content="hutsik"
+               Background="Transparent"
+               Foreground="White"
+               FontWeight="Bold"
+               FontSize="16"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+    </Grid>
+</UserControl>
