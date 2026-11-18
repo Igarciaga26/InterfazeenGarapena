@@ -41,7 +41,7 @@ Aplikazioak bezero-zerbitzari egitura du:
 
 | Erabiltzailea | Pasahitza | Rola |
 | --- | --- | --- |
-| `admin@tpv.eus` | _(pasahitza hemen jarri)_ | admin |
+| `admin@tpv.eus` | _admin123_ | admin |
 
 Beste erabiltzaile batzuk administratzaileak sor ditzake aplikazioaren *Erabiltzaileak* atalean.
 
