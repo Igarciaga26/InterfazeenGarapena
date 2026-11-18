@@ -16,7 +16,6 @@
 
     <Window.Resources>
 
-        <!-- Goiburuko nabigazio fitxa -->
         <Style x:Key="NavTab" TargetType="Button">
             <Setter Property="Foreground" Value="#6B7280"/>
             <Setter Property="FontSize" Value="14"/>
@@ -44,8 +43,7 @@
             </Setter>
         </Style>
 
-        <!-- Fitxa aktiboa -->
-        <Style x:Key="NavTabActive" TargetType="Button" BasedOn="{StaticResource NavTab}">
+       <Style x:Key="NavTabActive" TargetType="Button" BasedOn="{StaticResource NavTab}">
             <Setter Property="Foreground" Value="#1E5EFF"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Template">
@@ -63,7 +61,6 @@
             </Setter>
         </Style>
 
-        <!-- Ekintza botoi biribildua -->
         <Style x:Key="RoundButton" TargetType="Button">
             <Setter Property="Background" Value="#E5E7EB"/>
             <Setter Property="Foreground" Value="#374151"/>
@@ -89,7 +86,6 @@
             </Setter>
         </Style>
 
-        <!-- Txartel zuria -->
         <Style x:Key="Box" TargetType="Border">
             <Setter Property="Background" Value="White"/>
             <Setter Property="BorderBrush" Value="#E5E7EB"/>
@@ -116,7 +112,6 @@
             <Setter Property="Margin" Value="0,12,0,4"/>
         </Style>
 
-        <!-- Taulako gelaxken testua -->
         <Style x:Key="CellText" TargetType="TextBlock">
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="8,0"/>
@@ -184,7 +179,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- ================= GOIKO MENUA ================= -->
         <Border Grid.Row="0"
                 Background="White"
                 BorderBrush="#E5E7EB"
@@ -218,7 +212,6 @@
             </Grid>
         </Border>
 
-        <!-- ================= EDUKI NAGUSIA ================= -->
         <Grid Grid.Row="1" Margin="25,20,25,25">
 
             <Grid.RowDefinitions>
@@ -232,7 +225,6 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- ZERRENDA -->
                 <Border Grid.Column="0"
                         Style="{StaticResource Box}"
                         Padding="20"
@@ -272,7 +264,6 @@
                     </Grid>
                 </Border>
 
-                <!-- FORMULARIOA -->
                 <Border Grid.Column="1"
                         Style="{StaticResource Box}"
                         Padding="20,20,12,20"
@@ -307,7 +298,6 @@
                 </Border>
             </Grid>
 
-            <!-- BEHEKO BOTOIAK -->
             <StackPanel Grid.Row="1"
                         Orientation="Horizontal"
                         HorizontalAlignment="Right"

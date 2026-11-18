@@ -6,7 +6,6 @@ using System.Text.Json.Serialization;
 
 namespace Erronka.IgorGarcia
 {
-    // ================= EREDUAK =================
 
     public class Erabiltzailea
     {
@@ -22,7 +21,6 @@ namespace Erronka.IgorGarcia
         public int Id { get; set; }
         public string Izena { get; set; } = "";
 
-        // Motaren ikonoa (izenaren arabera)
         [JsonIgnore]
         public string Ikonoa
         {
@@ -52,7 +50,6 @@ namespace Erronka.IgorGarcia
         public string MotaIzena { get; set; } = "";
         public string? Irudia { get; set; }
 
-        // Irudiaren bide osoa (null = irudirik ez edo fitxategia ez dago)
         [JsonIgnore]
         public string? IrudiBidea
         {
@@ -116,16 +113,13 @@ namespace Erronka.IgorGarcia
         public event PropertyChangedEventHandler? PropertyChanged;
     }
 
-    // ================= PROTOKOLOA =================
-
-    // Bezeroak zerbitzariari bidaltzen diona (JSON lerro bat)
+ 
     public class Eskakizuna
     {
         public string Agindua { get; set; } = "";
         public JsonElement? Datuak { get; set; }
     }
 
-    // Zerbitzariak bezeroari erantzuten diona (JSON lerro bat)
     public class Erantzuna
     {
         public bool Ondo { get; set; }

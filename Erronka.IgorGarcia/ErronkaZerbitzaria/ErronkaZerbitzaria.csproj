@@ -12,7 +12,6 @@
 		<PackageReference Include="Microsoft.Data.Sqlite" Version="11.0.0" />
 	</ItemGroup>
 
-	<!-- Bezeroarekin partekatutako fitxategia (ereduak eta protokoloa) -->
 	<ItemGroup>
 		<Compile Include="..\Erronka.IgorGarcia\Protokoloa.cs" Link="Protokoloa.cs" />	</ItemGroup>
 

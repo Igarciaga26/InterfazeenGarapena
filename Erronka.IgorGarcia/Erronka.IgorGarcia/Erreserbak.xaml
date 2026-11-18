@@ -17,7 +17,6 @@
 
     <Window.Resources>
 
-        <!-- Goiburuko nabigazio fitxa -->
         <Style x:Key="NavTab" TargetType="Button">
             <Setter Property="Foreground" Value="#6B7280"/>
             <Setter Property="FontSize" Value="14"/>
@@ -45,7 +44,6 @@
             </Setter>
         </Style>
 
-        <!-- Fitxa aktiboa (uneko leihoa) -->
         <Style x:Key="NavTabActive" TargetType="Button" BasedOn="{StaticResource NavTab}">
             <Setter Property="Foreground" Value="#1E5EFF"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
@@ -64,7 +62,6 @@
             </Setter>
         </Style>
 
-        <!-- Ekintza botoi biribildua -->
         <Style x:Key="RoundButton" TargetType="Button">
             <Setter Property="Background" Value="#E5E7EB"/>
             <Setter Property="Foreground" Value="#374151"/>
@@ -90,7 +87,6 @@
             </Setter>
         </Style>
 
-        <!-- Mahai botoia -->
         <Style x:Key="TableButton" TargetType="Button">
             <Setter Property="Margin" Value="8"/>
             <Setter Property="FontSize" Value="14"/>
@@ -118,7 +114,6 @@
             </Setter>
         </Style>
 
-        <!-- Txartel zuria, ertz leunarekin eta itzal arinarekin -->
         <Style x:Key="Box" TargetType="Border">
             <Setter Property="Background" Value="White"/>
             <Setter Property="BorderBrush" Value="#E5E7EB"/>
@@ -131,7 +126,6 @@
             </Setter>
         </Style>
 
-        <!-- Txartelaren izenburua -->
         <Style x:Key="CardTitle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
@@ -139,7 +133,6 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
-        <!-- Eremuaren etiketa -->
         <Style x:Key="FieldLabel" TargetType="TextBlock">
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
@@ -147,7 +140,6 @@
             <Setter Property="Margin" Value="0,10,0,4"/>
         </Style>
 
-        <!-- TextBox biribildua -->
         <Style TargetType="TextBox">
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Padding" Value="8,0"/>
@@ -188,7 +180,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- ================= GOIKO MENUA ================= -->
         <Border Grid.Row="0"
                 Background="White"
                 BorderBrush="#E5E7EB"
@@ -199,7 +190,6 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- Logotipoa / izenburua -->
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <Border Width="30" Height="30" CornerRadius="8" Background="#1E5EFF">
                         <TextBlock Text="T" Foreground="White" FontSize="17" FontWeight="Bold"
@@ -212,7 +202,6 @@
                                VerticalAlignment="Center"/>
                 </StackPanel>
 
-                <!-- Nabigazioa -->
                 <StackPanel Grid.Column="1"
                             Orientation="Horizontal"
                             Margin="40,0,0,0">
@@ -224,7 +213,6 @@
             </Grid>
         </Border>
 
-        <!-- ================= EDUKI NAGUSIA ================= -->
         <Grid Grid.Row="1" Margin="25,20,25,25">
 
             <Grid.RowDefinitions>
@@ -233,7 +221,6 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <!-- DATA ETA TXANDA -->
             <Border Grid.Row="0"
                     Style="{StaticResource Box}"
                     Padding="18,14"
@@ -288,7 +275,6 @@
                 </Grid>
             </Border>
 
-            <!-- MAHAIEN PLANOA ETA ERRESERBA DATUAK -->
             <Grid Grid.Row="1">
 
                 <Grid.ColumnDefinitions>
@@ -296,7 +282,6 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- MAHAIEN PLANOA -->
                 <Border Grid.Column="0"
                         Style="{StaticResource Box}"
                         Padding="20"
@@ -312,10 +297,8 @@
                         <TextBlock Text="Mahaien planoa"
                                    Style="{StaticResource CardTitle}"/>
 
-                        <!-- MAHAIAK (kodetik sortzen dira) -->
                         <UniformGrid x:Name="ugMahaiak" Grid.Row="1" Columns="3"/>
 
-                        <!-- KOLOREEN LEGENDA -->
                         <StackPanel Grid.Row="2"
                                     Orientation="Horizontal"
                                     HorizontalAlignment="Center"
@@ -340,7 +323,6 @@
                     </Grid>
                 </Border>
 
-                <!-- ERRESERBAREN DATUAK -->
                 <Border Grid.Column="1"
                         Style="{StaticResource Box}"
                         Padding="20,20,12,20"
@@ -399,7 +381,6 @@
 
             </Grid>
 
-            <!-- BEHEKO BOTOIAK -->
             <StackPanel Grid.Row="2"
                         Orientation="Horizontal"
                         HorizontalAlignment="Right"

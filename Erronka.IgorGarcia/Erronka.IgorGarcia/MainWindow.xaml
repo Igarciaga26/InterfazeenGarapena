@@ -15,7 +15,6 @@
         Background="White">
 
     <Window.Resources>
-        <!-- Botoi gris karratua (kalkulagailua, Saioa hasi) -->
         <Style x:Key="GrayButton" TargetType="Button">
             <Setter Property="Margin" Value="3"/>
             <Setter Property="Background" Value="#D9D9D9"/>
@@ -23,7 +22,6 @@
             <Setter Property="FontSize" Value="16"/>
         </Style>
 
-        <!-- Botoi gris biribildua (Imprimatu) -->
         <Style x:Key="RoundButton" TargetType="Button">
             <Setter Property="Background" Value="#D9D9D9"/>
             <Setter Property="FontSize" Value="14"/>
@@ -46,7 +44,6 @@
             </Setter>
         </Style>
 
-        <!-- Goiburuko nabigazio fitxa -->
         <Style x:Key="NavTab" TargetType="Button">
             <Setter Property="Foreground" Value="#555555"/>
             <Setter Property="FontSize" Value="15"/>
@@ -74,7 +71,6 @@
             </Setter>
         </Style>
 
-        <!-- Fitxa aktiboa (uneko leihoa) -->
         <Style x:Key="NavTabActive" TargetType="Button" BasedOn="{StaticResource NavTab}">
             <Setter Property="Foreground" Value="#1E5EFF"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
@@ -93,7 +89,6 @@
             </Setter>
         </Style>
 
-        <!-- Ertz beltz mehea eta izkina biribilduak dituen kutxa -->
         <Style x:Key="Box" TargetType="Border">
             <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="BorderThickness" Value="1"/>
@@ -108,7 +103,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- ================= GOIBURUA ================= -->
         <Border Grid.Row="0"
                 Background="White"
                 BorderBrush="#DDDDDD"
@@ -119,7 +113,6 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- Logotipoa / izenburua -->
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <Border Width="30" Height="30" CornerRadius="8" Background="#1E5EFF">
                         <TextBlock Text="T" Foreground="White" FontSize="17" FontWeight="Bold"
@@ -132,7 +125,6 @@
                                VerticalAlignment="Center"/>
                 </StackPanel>
 
-                <!-- Leihoen arteko nabigazioa -->
                 <StackPanel Grid.Column="1"
                             Orientation="Horizontal"
                             Margin="40,0,0,0">
@@ -144,7 +136,6 @@
             </Grid>
         </Border>
 
-        <!-- ================= EDUKIA ================= -->
         <Grid Grid.Row="1" Margin="25,15,25,25">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*"/>
@@ -152,14 +143,12 @@
                 <ColumnDefinition Width="6*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- ================= EZKERRA: ESKAERA ================= -->
             <Grid Grid.Column="0" Margin="0,60,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="70"/>
                 </Grid.RowDefinitions>
 
-                <!-- Eskaeraren zerrenda (klik bikoitza: unitate bat kendu) -->
                 <Border Grid.Row="0" Style="{StaticResource Box}" Padding="6">
                     <ListBox x:Name="lstEskaera"
                              BorderThickness="0"
@@ -184,7 +173,6 @@
                                                HorizontalAlignment="Right" VerticalAlignment="Center"
                                                Margin="0,0,10,0"/>
 
-                                    <!-- Lerroa kentzeko zakarrontzia -->
                                     <Button Grid.Column="3"
                                             Content="🗑"
                                             Width="28" Height="28"
@@ -203,7 +191,6 @@
                     </ListBox>
                 </Border>
 
-                <!-- Guztira -->
                 <Grid Grid.Row="1" Margin="0,10,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -220,7 +207,6 @@
                 </Grid>
             </Grid>
 
-            <!-- ================= ESKUINA ================= -->
             <Grid Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="45"/>
@@ -230,7 +216,6 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <!-- Goiko botoiak -->
                 <StackPanel Grid.Row="0"
                             Orientation="Horizontal"
                             HorizontalAlignment="Right">
@@ -255,7 +240,6 @@
                             Click="Imprimatu_Click"/>
                 </StackPanel>
 
-                <!-- Goiko gune handia (produktuak) -->
                 <Border Grid.Row="2" Style="{StaticResource Box}" Padding="12">
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
                         <ItemsControl x:Name="icProduktuak">
@@ -274,7 +258,6 @@
                                             Tag="{Binding}"
                                             Click="Produktua_Click">
                                         <StackPanel>
-                                            <!-- Irudia (irudirik ez badago, koadro grisa) -->
                                             <Grid Width="90" Height="90">
                                                 <Border Background="#D9D9D9" CornerRadius="6"/>
                                                 <Image Source="{Binding IrudiBidea}" Stretch="UniformToFill"/>
@@ -296,7 +279,6 @@
                     </ScrollViewer>
                 </Border>
 
-                <!-- Beheko zatia -->
                 <Grid Grid.Row="4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1.4*"/>
@@ -304,7 +286,6 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <!-- Produktu moten zerrenda -->
                     <Border Grid.Column="0" Style="{StaticResource Box}" Padding="6">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -340,14 +321,12 @@
                         </Grid>
                     </Border>
 
-                    <!-- Kalkulagailua (kantitate hautatzailea) -->
                     <Grid Grid.Column="2">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <!-- Pantaila -->
                         <Border Grid.Row="0" Style="{StaticResource Box}" Margin="3,0,3,3" Padding="10,4">
                             <TextBlock x:Name="txtPantaila" Text="0"
                                        FontSize="24" FontWeight="SemiBold"
@@ -356,7 +335,6 @@
 
                         <Grid Grid.Row="1">
                             <Grid.Resources>
-                                <!-- Botoi guztiek klik berdina erabiltzen dute -->
                                 <Style TargetType="Button" BasedOn="{StaticResource GrayButton}">
                                     <EventSetter Event="Click" Handler="Kalk_Click"/>
                                 </Style>
@@ -376,29 +354,24 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
-                            <!-- 0. errenkada -->
                             <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="CE"/>
                             <Button Grid.Row="0" Grid.Column="2" Content="*"/>
                             <Button Grid.Row="0" Grid.Column="3" Content="-" IsEnabled="False"/>
 
-                            <!-- 1. errenkada -->
                             <Button Grid.Row="1" Grid.Column="0" Content="7"/>
                             <Button Grid.Row="1" Grid.Column="1" Content="8"/>
                             <Button Grid.Row="1" Grid.Column="2" Content="9"/>
                             <Button Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Content="+" IsEnabled="False"/>
 
-                            <!-- 2. errenkada -->
                             <Button Grid.Row="2" Grid.Column="0" Content="4"/>
                             <Button Grid.Row="2" Grid.Column="1" Content="5"/>
                             <Button Grid.Row="2" Grid.Column="2" Content="6"/>
 
-                            <!-- 3. errenkada -->
                             <Button Grid.Row="3" Grid.Column="0" Content="1"/>
                             <Button Grid.Row="3" Grid.Column="1" Content="2"/>
                             <Button Grid.Row="3" Grid.Column="2" Content="3"/>
                             <Button Grid.Row="3" Grid.Column="3" Grid.RowSpan="2" Content="=" IsEnabled="False"/>
 
-                            <!-- 4. errenkada -->
                             <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="0"/>
                             <Button Grid.Row="4" Grid.Column="2" Content="," IsEnabled="False"/>
                         </Grid>
