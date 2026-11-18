@@ -6,10 +6,9 @@ using System.Windows.Media.Animation;
 
 namespace Ariketa.IgorGarcia;
 
-/// <summary>Lekuaren egoera: librea, hautatua (oraindik erreserbatu gabe) edo okupatua (erreserbatua).</summary>
+
 public enum SeatState { Free, Selected, Occupied }
 
-/// <summary>Gertaeren datuak: zein lekutan egin den klik (indizeak 0-tik hasten dira).</summary>
 public class SeatEventArgs : EventArgs
 {
     public SeatEventArgs(int row, int column)
@@ -22,7 +21,6 @@ public class SeatEventArgs : EventArgs
     public int Column { get; }
 }
 
-/// <summary>Leku-mapa berrerabilgarria. Konfigurazioa propietateen bidez egiten da.</summary>
 public partial class SeatMapControl : UserControl
 {
     private static readonly Color FreeColor = Color.FromRgb(0x22, 0xC5, 0x5E);     // berdea
@@ -31,7 +29,7 @@ public partial class SeatMapControl : UserControl
     private Border[,] _borders = new Border[0, 0];
     private SeatState[,] _states = new SeatState[0, 0];
 
-    // ---------------- Propietateak ----------------
+
 
     public static readonly DependencyProperty RowsProperty = DependencyProperty.Register(
         nameof(Rows), typeof(int), typeof(SeatMapControl),
@@ -45,28 +43,25 @@ public partial class SeatMapControl : UserControl
         nameof(AccentColor), typeof(Color), typeof(SeatMapControl),
         new PropertyMetadata(Color.FromRgb(0xF9, 0x73, 0x16)));
 
-    /// <summary>Errenkada kopurua. Lehenetsia: 5.</summary>
     public int Rows
     {
         get => (int)GetValue(RowsProperty);
         set => SetValue(RowsProperty, value);
     }
 
-    /// <summary>Errenkada bakoitzeko eserleku kopurua (gehienez 26). Lehenetsia: 4.</summary>
     public int Columns
     {
         get => (int)GetValue(ColumnsProperty);
         set => SetValue(ColumnsProperty, value);
     }
 
-    /// <summary>Hautatutako lekuen kolorea eta hover ertzarena. Lehenetsia: laranja.</summary>
     public Color AccentColor
     {
         get => (Color)GetValue(AccentColorProperty);
         set => SetValue(AccentColorProperty, value);
     }
 
-    // ---------------- Gertaerak ----------------
+
 
     public event EventHandler<SeatEventArgs>? SeatSelected;
     public event EventHandler<SeatEventArgs>? SeatUnselected;
@@ -78,12 +73,9 @@ public partial class SeatMapControl : UserControl
         Rebuild();
     }
 
-    // ---------------- Metodo publikoak ----------------
 
-    /// <summary>Lekuaren izena: errenkada zenbakia + zutabe letra, adibidez "3B".</summary>
     public static string GetSeatLabel(int row, int column) => $"{row + 1}{(char)('A' + column)}";
 
-    /// <summary>Hautatutako lekuak erreserbatzen ditu (okupatu bihurtzen dira) eta erreserbatutakoen zerrenda itzultzen du.</summary>
     public List<(int Row, int Column)> Reserve()
     {
         var reserved = new List<(int Row, int Column)>();
@@ -99,14 +91,12 @@ public partial class SeatMapControl : UserControl
         return reserved;
     }
 
-    /// <summary>Leku okupatu baten erreserba bertan behera uzten du (libre geratzen da).</summary>
     public void CancelReservation(int row, int column)
     {
         if (_states[row, column] == SeatState.Occupied)
             SetState(row, column, SeatState.Free);
     }
 
-    /// <summary>Leku okupatuak ezartzen ditu; gainerakoak libre geratzen dira.</summary>
     public void SetOccupiedSeats(IEnumerable<(int Row, int Column)> occupied)
     {
         for (int r = 0; r < Rows; r++)
@@ -120,7 +110,6 @@ public partial class SeatMapControl : UserControl
         }
     }
 
-    // ---------------- Barne-logika ----------------
 
     private void Rebuild()
     {
@@ -157,7 +146,6 @@ public partial class SeatMapControl : UserControl
                     }
                 };
 
-                // Hover: lekua pixka bat handitzen da eta ertza koloreztatzen da
                 border.MouseEnter += (_, _) =>
                 {
                     border.BorderBrush = new SolidColorBrush(AccentColor);
@@ -196,7 +184,6 @@ public partial class SeatMapControl : UserControl
         }
     }
 
-    /// <summary>Lekuaren egoera aldatzen du eta kolorea trantsizio batekin eguneratzen du.</summary>
     private void SetState(int row, int column, SeatState state)
     {
         _states[row, column] = state;
