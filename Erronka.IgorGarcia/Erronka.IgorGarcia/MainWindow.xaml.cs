@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -10,33 +9,6 @@ using System.Windows.Controls;
 
 namespace Erronka.IgorGarcia
 {
-    public class EskaeraLerroa : INotifyPropertyChanged
-    {
-        private int kantitatea;
-
-        public int ProduktuId { get; set; }
-        public string Izena { get; set; } = "";
-        public double Prezioa { get; set; }
-
-        public int Kantitatea
-        {
-            get { return kantitatea; }
-            set
-            {
-                kantitatea = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Kantitatea)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Guztira)));
-            }
-        }
-
-        public double Guztira
-        {
-            get { return Prezioa * Kantitatea; }
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-    }
-
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -74,7 +46,7 @@ namespace Erronka.IgorGarcia
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Errorea datu-basea irakurtzean:\n" + ex.Message, "TPV Elkartea",
+                MessageBox.Show("Errorea zerbitzariarekin komunikatzean:\n" + ex.Message, "TPV Elkartea",
                                 MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
@@ -92,7 +64,15 @@ namespace Erronka.IgorGarcia
         {
             if (lstMotak.SelectedItem is ProduktuMota mota)
             {
-                icProduktuak.ItemsSource = Db.GetProduktuak(mota.Id);
+                try
+                {
+                    icProduktuak.ItemsSource = Db.GetProduktuak(mota.Id);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Errorea produktuak kargatzean:\n" + ex.Message, "TPV Elkartea",
+                                    MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 
@@ -136,6 +116,21 @@ namespace Erronka.IgorGarcia
 
                 GuztiraEguneratu();
             }
+        }
+
+        private void KenduLerroa_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button botoia && botoia.Tag is EskaeraLerroa lerroa)
+            {
+                eskaera.Remove(lerroa);
+                GuztiraEguneratu();
+            }
+        }
+
+        // Zakarrontziaren klik bikoitzak ez du lerroaren unitateak kentzen
+        private void KenduLerroa_DobleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            e.Handled = true;
         }
 
         private void GuztiraEguneratu()
@@ -189,6 +184,7 @@ namespace Erronka.IgorGarcia
             }
             catch (InvalidOperationException ex)
             {
+                // Stock nahikorik ez
                 MessageBox.Show(ex.Message, "Imprimatu",
                                 MessageBoxButton.OK, MessageBoxImage.Warning);
             }
@@ -286,7 +282,16 @@ namespace Erronka.IgorGarcia
             if (erantzuna != MessageBoxResult.Yes)
                 return;
 
-            // Saioa itxi: aurreko erabiltzailearen eskaera eta kalkulagailua garbitu
+            // Saioa itxi: zerbitzariari jakinarazi eta aurreko erabiltzailearen datuak garbitu
+            try
+            {
+                Db.Logout();
+            }
+            catch (Exception)
+            {
+                // Zerbitzaria eskuragarri ez badago, saioa lokalki ixten da
+            }
+
             Sesioa.Unekoa = null;
             eskaera.Clear();
             GuztiraEguneratu();
@@ -319,20 +324,6 @@ namespace Erronka.IgorGarcia
         {
             new Erabiltzaileak().Show();
             Close();
-        }
-        private void KenduLerroa_Click(object sender, RoutedEventArgs e)
-        {
-            if (sender is Button botoia && botoia.Tag is EskaeraLerroa lerroa)
-            {
-                eskaera.Remove(lerroa);
-                GuztiraEguneratu();
-            }
-        }
-
-        // Zakarrontziaren klik bikoitzak ez du lerroaren unitateak kentzen
-        private void KenduLerroa_DobleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            e.Handled = true;
         }
     }
 }

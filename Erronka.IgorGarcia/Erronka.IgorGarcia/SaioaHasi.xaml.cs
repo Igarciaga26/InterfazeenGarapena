@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace Erronka.IgorGarcia
 {
@@ -27,7 +28,16 @@ namespace Erronka.IgorGarcia
                 return;
             }
 
-            Erabiltzailea = Db.Login(erabiltzailea, pasahitza);
+            try
+            {
+                Erabiltzailea = Db.Login(erabiltzailea, pasahitza);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ezin da zerbitzariarekin konektatu:\n" + ex.Message, "Saioa hasi",
+                                MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
             if (Erabiltzailea == null)
             {

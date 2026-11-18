@@ -162,10 +162,10 @@
                 <!-- Eskaeraren zerrenda (klik bikoitza: unitate bat kendu) -->
                 <Border Grid.Row="0" Style="{StaticResource Box}" Padding="6">
                     <ListBox x:Name="lstEskaera"
-         BorderThickness="0"
-         Background="Transparent"
-         HorizontalContentAlignment="Stretch"
-         MouseDoubleClick="LstEskaera_MouseDoubleClick">
+                             BorderThickness="0"
+                             Background="Transparent"
+                             HorizontalContentAlignment="Stretch"
+                             MouseDoubleClick="LstEskaera_MouseDoubleClick">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -178,25 +178,25 @@
 
                                     <TextBlock Text="{Binding Izena}" VerticalAlignment="Center"/>
                                     <TextBlock Grid.Column="1" Text="{Binding Kantitatea}"
-                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     <TextBlock Grid.Column="2"
-                           Text="{Binding Guztira, StringFormat={}{0:N2}€}"
-                           HorizontalAlignment="Right" VerticalAlignment="Center"
-                           Margin="0,0,10,0"/>
+                                               Text="{Binding Guztira, StringFormat={}{0:N2}€}"
+                                               HorizontalAlignment="Right" VerticalAlignment="Center"
+                                               Margin="0,0,10,0"/>
 
                                     <!-- Lerroa kentzeko zakarrontzia -->
                                     <Button Grid.Column="3"
-                        Content="🗑"
-                        Width="28" Height="28"
-                        FontSize="15"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Foreground="#B42318"
-                        Cursor="Hand"
-                        ToolTip="Produktua kendu"
-                        Tag="{Binding}"
-                        Click="KenduLerroa_Click"
-                        MouseDoubleClick="KenduLerroa_DobleClick"/>
+                                            Content="🗑"
+                                            Width="28" Height="28"
+                                            FontSize="15"
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            Foreground="#B42318"
+                                            Cursor="Hand"
+                                            ToolTip="Produktua kendu"
+                                            Tag="{Binding}"
+                                            Click="KenduLerroa_Click"
+                                            MouseDoubleClick="KenduLerroa_DobleClick"/>
                                 </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -211,12 +211,12 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="1" Text="Guztira:"
-                           FontSize="20" FontWeight="Bold"
-                           VerticalAlignment="Top"/>
+                               FontSize="20" FontWeight="Bold"
+                               VerticalAlignment="Top"/>
                     <TextBlock x:Name="txtGuztira" Grid.Column="2" Text="0,00€"
-                           FontSize="18"
-                           Margin="40,2,10,0"
-                           VerticalAlignment="Top"/>
+                               FontSize="18"
+                               Margin="40,2,10,0"
+                               VerticalAlignment="Top"/>
                 </Grid>
             </Grid>
 
@@ -274,9 +274,11 @@
                                             Tag="{Binding}"
                                             Click="Produktua_Click">
                                         <StackPanel>
-                                            <Border Width="90" Height="90"
-                                                    Background="#D9D9D9"
-                                                    CornerRadius="6"/>
+                                            <!-- Irudia (irudirik ez badago, koadro grisa) -->
+                                            <Grid Width="90" Height="90">
+                                                <Border Background="#D9D9D9" CornerRadius="6"/>
+                                                <Image Source="{Binding IrudiBidea}" Stretch="UniformToFill"/>
+                                            </Grid>
                                             <TextBlock Text="{Binding Izena}"
                                                        FontSize="14" FontWeight="SemiBold"
                                                        TextAlignment="Center"
@@ -322,7 +324,14 @@
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Border Width="32" Height="32" Background="#D9D9D9" CornerRadius="4" Margin="0,0,10,0"/>
+                                            <Border Width="32" Height="32" Background="#EEF3FF" CornerRadius="6" Margin="0,0,10,0">
+                                                <TextBlock Text="{Binding Ikonoa}"
+                           FontFamily="Segoe UI Emoji"
+                           FontSize="18"
+                           Foreground="#1E5EFF"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                                            </Border>
                                             <TextBlock Text="{Binding Izena}" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </DataTemplate>
@@ -331,7 +340,7 @@
                         </Grid>
                     </Border>
 
-                    <!-- Kalkulagailua -->
+                    <!-- Kalkulagailua (kantitate hautatzailea) -->
                     <Grid Grid.Column="2">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -341,8 +350,8 @@
                         <!-- Pantaila -->
                         <Border Grid.Row="0" Style="{StaticResource Box}" Margin="3,0,3,3" Padding="10,4">
                             <TextBlock x:Name="txtPantaila" Text="0"
-                   FontSize="24" FontWeight="SemiBold"
-                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                       FontSize="24" FontWeight="SemiBold"
+                                       HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         </Border>
 
                         <Grid Grid.Row="1">
