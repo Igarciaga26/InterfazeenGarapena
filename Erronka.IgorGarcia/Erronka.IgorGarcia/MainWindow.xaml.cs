@@ -17,11 +17,10 @@ namespace Erronka.IgorGarcia
         private readonly ObservableCollection<EskaeraLerroa> eskaera = new ObservableCollection<EskaeraLerroa>();
         private static readonly CultureInfo Kultura = new CultureInfo("es-ES");
 
-        // Kalkulagailua (kantitate hautatzaile gisa)
-        private string pantaila = "0";           // idazten ari den zenbakia
-        private int kantitatea = 1;              // * sakatu ondoren finkatutako kantitatea
+        private string pantaila = "0";           
+        private int kantitatea = 1;              
         private bool kantitateaFinkatuta = false;
-        private bool berria = true;              // true = hurrengo zifrak pantaila berrezarriko du
+        private bool berria = true;             
 
         public MainWindow()
         {
@@ -50,7 +49,6 @@ namespace Erronka.IgorGarcia
                                 MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            // Saiorik gabe: login-a eskatu leihoa agertu ondoren
             Loaded += (s, e) =>
             {
                 if (Sesioa.Unekoa == null)
@@ -58,7 +56,6 @@ namespace Erronka.IgorGarcia
             };
         }
 
-        // ================= PRODUKTUAK ETA ESKAERA =================
 
         private void LstMotak_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -80,7 +77,6 @@ namespace Erronka.IgorGarcia
         {
             if (sender is Button botoia && botoia.Tag is Produktua produktua)
             {
-                // Kalkulagailuan "6 *" idatzi bada, 6 unitate; bestela 1
                 int kopurua = kantitateaFinkatuta ? kantitatea : 1;
 
                 EskaeraLerroa? lerroa = eskaera.FirstOrDefault(l => l.ProduktuId == produktua.Id);
@@ -127,7 +123,6 @@ namespace Erronka.IgorGarcia
             }
         }
 
-        // Zakarrontziaren klik bikoitzak ez du lerroaren unitateak kentzen
         private void KenduLerroa_DobleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             e.Handled = true;
@@ -195,7 +190,6 @@ namespace Erronka.IgorGarcia
             }
         }
 
-        // ================= KALKULAGAILUA (KANTITATEA) =================
 
         private void KalkGarbitu()
         {
@@ -212,7 +206,6 @@ namespace Erronka.IgorGarcia
 
             if (t.Length == 1 && char.IsDigit(t[0]))
             {
-                // Zifra berria idazten bada, finkatutako kantitatea baliogabetzen da
                 kantitateaFinkatuta = false;
 
                 if (berria)
@@ -243,9 +236,7 @@ namespace Erronka.IgorGarcia
             }
         }
 
-        // ================= SAIOA ETA NABIGAZIOA =================
 
-        // Login leihoa erakusten du. Saiorik hasi gabe ixten bada, aplikazioa ixten da.
         private void LoginEskatu()
         {
             SaioaHasi leihoa = new SaioaHasi();
@@ -282,14 +273,12 @@ namespace Erronka.IgorGarcia
             if (erantzuna != MessageBoxResult.Yes)
                 return;
 
-            // Saioa itxi: zerbitzariari jakinarazi eta aurreko erabiltzailearen datuak garbitu
             try
             {
                 Db.Logout();
             }
             catch (Exception)
             {
-                // Zerbitzaria eskuragarri ez badago, saioa lokalki ixten da
             }
 
             Sesioa.Unekoa = null;

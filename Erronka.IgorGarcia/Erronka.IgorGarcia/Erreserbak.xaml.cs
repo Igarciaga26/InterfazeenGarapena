@@ -24,7 +24,6 @@ namespace Erronka.IgorGarcia
         {
             InitializeComponent();
 
-            // Saiorik gabe: menura itzuli (hor login-a eskatuko da)
             if (Sesioa.Unekoa == null)
             {
                 Loaded += (s, e) =>
@@ -52,7 +51,6 @@ namespace Erronka.IgorGarcia
             }
         }
 
-        // ================= NABIGAZIOA =================
 
         private void NabigazioaEguneratu()
         {
@@ -74,7 +72,6 @@ namespace Erronka.IgorGarcia
             Close();
         }
 
-        // ================= LAGUNTZAILEAK =================
 
         private static Brush Kolorea(string hex)
         {
@@ -118,7 +115,6 @@ namespace Erronka.IgorGarcia
             FormaGarbitu();
         }
 
-        // Mahaiak berriro marrazten ditu data eta txandaren arabera
         private void Eguneratu()
         {
             ugMahaiak.Children.Clear();
@@ -167,7 +163,6 @@ namespace Erronka.IgorGarcia
             }
         }
 
-        // Formularioko datuak Erreserba objektu batean jasotzen ditu. Null = baliogabea.
         private Erreserba? Baliozkotu()
         {
             if (hautatuta == null)
@@ -228,7 +223,6 @@ namespace Erronka.IgorGarcia
             };
         }
 
-        // ================= EKITALDIAK =================
 
         private void Mahaia_Click(object sender, RoutedEventArgs e)
         {
@@ -242,7 +236,6 @@ namespace Erronka.IgorGarcia
 
                 if (hautatutakoErreserba != null)
                 {
-                    // Erreserbatutako mahaia: datuak kargatu
                     Erreserba r = hautatutakoErreserba;
                     txtIzena.Text = r.Bezeroa;
                     txtTelefonoa.Text = r.Telefonoa;

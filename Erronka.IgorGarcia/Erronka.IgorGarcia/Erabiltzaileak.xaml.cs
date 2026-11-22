@@ -19,7 +19,6 @@ namespace Erronka.IgorGarcia
             cmbRola.ItemsSource = new[] { "admin", "langilea" };
             cmbRola.SelectedIndex = 1;
 
-            // Administratzaileak soilik: bestela, menura itzuli
             if (!Sesioa.Admin)
             {
                 Loaded += (s, e) =>
@@ -61,7 +60,6 @@ namespace Erronka.IgorGarcia
             lblPasahitza.Text = "Pasahitza";
         }
 
-        // Formularioko datuak jasotzen ditu. Null = baliogabea.
         private Erabiltzailea? Baliozkotu(bool berria)
         {
             string izena = txtIzena.Text.Trim();
@@ -101,7 +99,6 @@ namespace Erronka.IgorGarcia
             };
         }
 
-        // ================= EKITALDIAK =================
 
         private void Dg_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -180,7 +177,6 @@ namespace Erronka.IgorGarcia
 
                 Db.EguneratuErabiltzailea(berria);
 
-                // Norberaren datuak aldatu badira, saioa eguneratu
                 if (Sesioa.Unekoa != null && Sesioa.Unekoa.Id == berria.Id)
                 {
                     Sesioa.Unekoa.Izena = berria.Izena;

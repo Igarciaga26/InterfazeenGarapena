@@ -3,7 +3,6 @@ using Microsoft.Data.Sqlite;
 
 namespace Erronka.Zerbitzaria
 {
-    // Stock nahikorik ez dagoenean jaurtitzen da
     public class StockEzaException : Exception
     {
         public StockEzaException(string mezua) : base(mezua) { }
@@ -14,7 +13,6 @@ namespace Erronka.Zerbitzaria
         private static readonly string ConnectionString =
             "Data Source=" + Path.Combine(AppContext.BaseDirectory, "tpv.db");
 
-        // DBko idazketa guztiak blokeo bakar honekin egiten dira
         private static readonly object Idazketa = new object();
 
         private static SqliteConnection Ireki()
@@ -24,7 +22,6 @@ namespace Erronka.Zerbitzaria
             return konexioa;
         }
 
-        // ================= LOGIN =================
 
         public static Erabiltzailea? Login(string erabiltzailea, string pasahitza)
         {
@@ -48,7 +45,6 @@ namespace Erronka.Zerbitzaria
             };
         }
 
-        // ================= PRODUKTUAK =================
 
         public static List<ProduktuMota> GetMotak()
         {
@@ -69,7 +65,6 @@ namespace Erronka.Zerbitzaria
             return zerrenda;
         }
 
-        // motaId = 0 bada, produktu guztiak itzultzen ditu.
         public static List<Produktua> GetProduktuak(int motaId)
         {
             List<Produktua> zerrenda = new List<Produktua>();
@@ -170,7 +165,6 @@ namespace Erronka.Zerbitzaria
             }
         }
 
-        // Produktuen irudiak esleitzen ditu (hutsik daudenean soilik). Zerbitzaria abiatzean deitzen da.
         public static void IrudiakEsleitu()
         {
             string[,] irudiak =
@@ -226,7 +220,6 @@ namespace Erronka.Zerbitzaria
             }
         }
 
-        // ================= MAHAIAK ETA ERRESERBAK =================
 
         public static List<Mahaia> GetMahaiak()
         {
@@ -334,10 +327,7 @@ namespace Erronka.Zerbitzaria
             }
         }
 
-        // ================= ESKAERAK =================
 
-        // Eskaera gorde eta stock-a kendu. Eskaeraren id-a itzultzen du.
-        // Stock nahikorik ez badago, StockEzaException jaurtitzen du eta ez da ezer gordetzen.
         public static int GordeEskaera(int erabiltzaileId, int? mahaiId, List<EskaeraLerroa> lista)
         {
             double guztira = lista.Sum(l => l.Prezioa * l.Kantitatea);
@@ -392,7 +382,6 @@ namespace Erronka.Zerbitzaria
             }
         }
 
-        // ================= ERABILTZAILEAK =================
 
         public static List<Erabiltzailea> GetErabiltzaileak()
         {
@@ -439,7 +428,6 @@ namespace Erronka.Zerbitzaria
             }
         }
 
-        // Pasahitza hutsik badago, lehengoa mantentzen da.
         public static void EguneratuErabiltzailea(Erabiltzailea e)
         {
             lock (Idazketa)
